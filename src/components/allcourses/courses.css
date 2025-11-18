@@ -70,6 +70,19 @@
   padding: 30px 20px;
   transition: 0.5s;
 }
+.online .icon-box {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  background: linear-gradient(135deg, #1eb2a6 0%, #16a89a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
 .online .img {
   width: 80px;
   height: 80px;
@@ -82,34 +95,40 @@
   object-fit: cover;
 }
 .online h1 {
-  font-weight: 500;
-  font-size: 20px;
-  margin: 20px 0;
-  line-height: 30px;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+  line-height: 26px;
+  color: #333;
 }
 .online span {
   background-color: #f8f8f8;
-  padding: 5px 20px;
+  padding: 6px 16px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13px;
   color: #1eb2a6;
-  border-radius: 5px;
+  border-radius: 20px;
+  display: inline-block;
 }
 .online .box .show {
   opacity: 0;
 }
 .online .box:hover {
-  background-color: #8ec1e1;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #1eb2a6 0%, #16a89a 100%);
+  border-radius: 8px;
   cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(30, 178, 166, 0.2);
 }
-.online .box:hover .show {
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
+.online .box:hover .icon-box {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 .online .box:hover h1 {
+  color: #fff;
+}
+.online .box:hover span {
+  background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 /*-------------online---------*/

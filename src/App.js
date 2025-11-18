@@ -9,6 +9,13 @@ import Blog from "./components/blog/Blog"
 import Contact from "./components/contact/Contact"
 import Footer from "./components/common/footer/Footer"
 import Home from "./components/home/Home"
+import StudyAbroad from "./components/services/StudyAbroad"
+import PreparationClasses from "./components/services/PreparationClasses"
+import RecreationalClasses from "./components/services/RecreationalClasses"
+import VocationalTraining from "./components/services/VocationalTraining"
+import InternshipOpportunities from "./components/services/InternshipOpportunities"
+import IeltsRegistration from "./components/services/IeltsRegistration"
+import InterviewPreparation from "./components/services/InterviewPreparation"
 function App() {
   return (
     <>
@@ -22,6 +29,13 @@ function App() {
           <Route exact path='/pricing' element={<Pricing/>} />
           <Route exact path='/journal' element={<Blog/>} />
           <Route exact path='/contact' element={<Contact/>} />
+          <Route exact path='/services/study-abroad' element={<StudyAbroad/>} />
+          <Route exact path='/services/preparation-classes' element={<PreparationClasses/>} />
+          <Route exact path='/services/recreational-classes' element={<RecreationalClasses/>} />
+          <Route exact path='/services/vocational-training' element={<VocationalTraining/>} />
+          <Route exact path='/services/internship-opportunities' element={<InternshipOpportunities/>} />
+          <Route exact path='/services/ielts-registration-mock-tests' element={<IeltsRegistration/>} />
+          <Route exact path='/services/interview-preparation' element={<InterviewPreparation/>} />
         </Routes>
         <Footer />
       </Router>
