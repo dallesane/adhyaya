@@ -6,13 +6,24 @@ const PriceCard = () => {
     <>
       {price.map((val) => (
         <div className='items shadow'>
-          <h4>{val.name}</h4>
-          <h1>
-            <span>$</span>
-            {val.price}
-          </h1>
-          <p>{val.desc}</p>
-          <button className='outline-btn'>GET STARTED</button>
+          <div className='price-header'>
+            <h4>{val.name}</h4>
+          </div>
+          <div className='price-amount'>
+            <h1>
+              {val.price === "Free" ? (
+                <span className='free-price'>{val.price}</span>
+              ) : (
+                <>
+                  <span className='currency'>₨</span>
+                  {val.price}
+                </>
+              )}
+            </h1>
+          </div>
+          <div className='price-description'>
+            <p>{val.desc}</p>
+          </div>
         </div>
       ))}
     </>

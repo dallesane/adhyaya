@@ -1,20 +1,76 @@
 .price .items {
-  padding: 40px;
+  padding: 40px 30px;
   text-align: center;
+  background: linear-gradient(135deg, #fff 0%, #f9fafb 100%);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #f0f0f0;
 }
-.price h1 {
-  font-size: 50px;
-  margin: 20px 0;
-  color: #1eb2a6;
+
+.price .items:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(30, 178, 166, 0.15) !important;
+  border-color: #1eb2a6;
 }
-.price h1 span {
+
+.price-header {
+  margin-bottom: 20px;
+}
+
+.price .items h4 {
   font-size: 20px;
-  margin-right: 5px;
-  color: #000;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
+
+.price-amount {
+  margin: 25px 0;
+  padding: 20px 0;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.price h1 {
+  font-size: 48px;
+  margin: 0;
+  color: #1eb2a6;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.price h1 .currency {
+  font-size: 24px;
+  color: #1eb2a6;
+  font-weight: 600;
+}
+
+.price h1 .free-price {
+  font-size: 48px;
+  color: #1eb2a6;
+  font-weight: 700;
+}
+
+.price-description {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .price p {
-  color: grey;
-  margin: 40px 0;
+  color: #666;
+  margin: 0;
+  line-height: 1.8;
+  font-size: 14px;
+  font-weight: 500;
 }
 /*--------------faq-------------*/
 .faq .container {

@@ -315,24 +315,24 @@ export const team = [
 ]
 export const price = [
   {
-    name: "IELTS Preparation",
-    price: "Rs 25000",
-    desc: "some  texts.",
+    name: "IELTS Class",
+    price: "7000",
+    desc: "Price Starting from 7000 NPR. Free trial class, books and Mock Test. (1000 Rs. off)",
   },
   {
-    name: "Mock Test",
-    price: "Rs 25000",
-    desc: "Some texts.",
+    name: "MOCK Test",
+    price: "100",
+    desc: "NPR 100 per section (R, L, W, S). 50% off on R, W, L",
   },
   {
-    name: "SOW",
-    price: "Rs 25000",
-    desc: "some texts.",
+    name: "IELTS Booking",
+    price: "Free",
+    desc: "Official IELTS registration and booking assistance",
   },
   {
-    name: "Documention Preparation",
-    price: "Rs 25000",
-    desc: "Some texts.",
+    name: "Guitar Classes",
+    price: "Free",
+    desc: "Free Trial Class Available",
   },
 ]
 export const faq = [
