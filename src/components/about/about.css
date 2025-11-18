@@ -13,6 +13,13 @@
 .aboutHome .right {
   padding: 80px 50px;
 }
+/* Align left image column with right column padding */
+.aboutHome .left {
+  padding: 80px 50px;
+}
+.aboutHome .left img {
+  display: block;
+}
 .aboutHome .items {
   margin-top: 50px;
 }
@@ -74,6 +81,11 @@
   }
   .aboutHome .row {
     width: 100%;
+  }
+  /* Reduce padding on small screens to keep layout compact */
+  .aboutHome .right,
+  .aboutHome .left {
+    padding: 30px 20px;
   }
   .awrapper {
     height: 50vh;

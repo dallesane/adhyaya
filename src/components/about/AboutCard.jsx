@@ -1,7 +1,6 @@
 import React from "react"
 import Heading from "../common/heading/Heading"
 import "./about.css"
-import { homeAbout } from "../../dummydata"
 import Awrapper from "./Awrapper"
 
 const AboutCard = () => {
@@ -14,20 +13,8 @@ const AboutCard = () => {
           </div>
           <div className='right row'>
             <Heading subtitle='Adhyaya' title='About US' />
-            <div className='items'>
-              {homeAbout.map((val) => {
-                return (
-                  <div className='item flexSB'>
-                    <div className='img'>
-                      <img src={val.cover} alt='' />
-                    </div>
-                    <div className='text'>
-                      <h2>{val.title}</h2>
-                      <p>{val.desc}</p>
-                    </div>
-                  </div>
-                )
-              })}
+            <div className='text'>
+              <p>At Adhyaya, we believe in a student-centric approach, tailoring our services to your individual academic needs and ambitions. Our team boasts extensive experience in international education, admission processes, and the ever-evolving educational landscape. We stay updated on the latest trends for international students and best practices to ensure up-to-date and effective guidance. Our commitment to you extends beyond the application process to ensure a smooth transition to your new academic journey. We believe in the power of lifelong learning and are dedicated to helping you discover new passions and skills.</p>
             </div>
           </div>
         </div>
