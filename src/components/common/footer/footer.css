@@ -65,6 +65,20 @@ footer .logo h1 {
   margin-bottom: 5px;
   color: #1eb2a6;
 }
+footer .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+footer .footer-brand img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
 footer .logo span {
   color: #1eb2a6;
   font-size: 12px;

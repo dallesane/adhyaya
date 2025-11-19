@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
-import Head from "./Head"
 import "./header.css"
 
 const Header = () => {
@@ -25,7 +24,16 @@ const Header = () => {
 
   return (
     <>
-      <Head />
+      <div className='header-logo-bar'>
+        <div className='container'>
+          <img className='header-logo-img' src='/images/main_logo.jpg' alt='Adhyaya logo' />
+          <div className='social'>
+            <i className='fab fa-facebook-f icon'></i>
+            <i className='fab fa-instagram icon'></i>
+            <i className='fab fa-youtube icon'></i>
+          </div>
+        </div>
+      </div>
       <header>
         <nav className='flexSB'>
           <ul className={click ? "mobile-nav" : "flexSB "} onClick={() => setClick(false)}>

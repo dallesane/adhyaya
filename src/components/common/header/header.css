@@ -16,6 +16,27 @@ header {
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0 30px;
 }
+.header-logo-bar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 100%);
+  padding: 8px 0 6px;
+}
+.header-logo-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo-img {
+  height: 64px;
+  width: auto;
+  display: block;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+.header-logo-bar .social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
 header .nav {
   display: flex !important;
 }

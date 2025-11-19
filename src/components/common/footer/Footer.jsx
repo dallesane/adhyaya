@@ -20,7 +20,10 @@ const Footer = () => {
       <footer>
         <div className='container padding'>
           <div className='box logo'>
-            <h1>Adhyaya</h1>
+            <div className='footer-brand'>
+              <img src='/images/main_logo.jpg' alt='Adhyaya logo' />
+              <h1>Adhyaya</h1>
+            </div>
             <span> EDUCATIONAL COSULTANCY</span>
             <p>We are here to guide you for your future".</p>
 
