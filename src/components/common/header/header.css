@@ -18,7 +18,7 @@ header {
 }
 .header-logo-bar {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 100%);
-  padding: 8px 0 6px;
+  padding: 12px 0 10px;
 }
 .header-logo-bar .container {
   display: flex;
@@ -26,11 +26,16 @@ header {
   justify-content: space-between;
 }
 .header-logo-img {
-  height: 64px;
+  height: 160px;
   width: auto;
   display: block;
   background: transparent;
   mix-blend-mode: multiply;
+}
+@media (max-width: 768px) {
+  .header-logo-img {
+    height: 120px;
+  }
 }
 .header-logo-bar .social {
   display: inline-flex;

@@ -46,3 +46,165 @@
     width: 100%;
   }
 }
+
+/* IELTS Banner */
+.ielts-banner {
+  position: relative;
+  z-index: 1;
+  margin-top: -60px;
+}
+.ielts-wrap {
+  background: linear-gradient(135deg, #1eb2a6 0%, #16a89a 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+.ielts-badge {
+  background: #fff;
+  color: #16a89a;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+}
+.ielts-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+}
+.ielts-cta {
+  background: #fff;
+  color: #16a89a;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+.ielts-cta:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+  .ielts-wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .ielts-title { font-size: 16px; }
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+.modal-card {
+  background: #fff;
+  border-radius: 16px;
+  width: 92%;
+  max-width: 520px;
+  padding: 22px 22px 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  font-size: 22px;
+  cursor: pointer;
+}
+.modal-title {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #102a43;
+}
+.modal-sub {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #4a5568;
+}
+.modal-form .field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.modal-form label {
+  font-size: 12px;
+  margin-bottom: 6px;
+  color: #334e68;
+  font-weight: 600;
+}
+.modal-form input {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+.modal-form input:focus {
+  border-color: #1eb2a6;
+  box-shadow: 0 0 0 3px rgba(30,178,166,0.2);
+}
+.submit-btn {
+  background: linear-gradient(135deg, #1eb2a6 0%, #16a89a 100%);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Success toast */
+.toast-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+.toast-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.toast-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1eb2a6;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+.toast-text { font-weight: 700; color: #102a43; }
+.toast-close {
+  background: transparent;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  color: #16a89a;
+}

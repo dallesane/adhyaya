@@ -28,9 +28,18 @@ const Header = () => {
         <div className='container'>
           <img className='header-logo-img' src='/images/main_logo.jpg' alt='Adhyaya logo' />
           <div className='social'>
-            <i className='fab fa-facebook-f icon'></i>
-            <i className='fab fa-instagram icon'></i>
-            <i className='fab fa-youtube icon'></i>
+            <a href='https://www.facebook.com/share/1BCJKP36MF/' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+              <i className='fab fa-facebook-f icon'></i>
+            </a>
+            <a href='https://www.instagram.com/adhyayaeducational?utm_source=qr&igsh=MWMxamNkdGEyaHY5' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+              <i className='fab fa-instagram icon'></i>
+            </a>
+            <a href='https://youtube.com/@adhyayaeducationalservices5577?si=96PIezr4HVwgJzTH' target='_blank' rel='noopener noreferrer' aria-label='YouTube'>
+              <i className='fab fa-youtube icon'></i>
+            </a>
+            <a href='https://youtube.com/@adhyayaeducationalservices5577?si=96PIezr4HVwgJzTH' target='_blank' rel='noopener noreferrer' aria-label='TikTok'>
+              <i className='fab fa-tiktok icon'></i>
+            </a>
           </div>
         </div>
       </div>
@@ -61,9 +70,6 @@ const Header = () => {
             </li>
             <li>
               <Link to='/courses'>All Courses</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
             </li>
             <li>
               <Link to='/team'>Team</Link>
