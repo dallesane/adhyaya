@@ -1,8 +1,35 @@
-import React from "react"
+import React, { useState } from "react"
 import "./services.css"
 import Back from "../common/back/Back"
+import "../home/hero/Hero.css"
+import { useNavigate } from "react-router-dom"
 
 const PreparationClasses = () => {
+  const navigate = useNavigate()
+  const [showForm, setShowForm] = useState(false)
+  const [showThanks, setShowThanks] = useState(false)
+  const [form, setForm] = useState({ name: "", phone: "", email: "" })
+  const [submitting, setSubmitting] = useState(false)
+
+  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    if (!form.name || !form.phone || !form.email) return
+    setSubmitting(true)
+    const subject = encodeURIComponent("IELTS register query")
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nThis is an IELTS register query submitted from the website.`
+    )
+    const mailto = `mailto:adhyaya.admissions@gmail.com?subject=${subject}&body=${body}`
+    window.open(mailto, "_blank")
+    setTimeout(() => {
+      setSubmitting(false)
+      setShowForm(false)
+      setShowThanks(true)
+    }, 400)
+  }
+
   return (
     <>
       <Back title='Preparation Classes' />
@@ -15,9 +42,9 @@ const PreparationClasses = () => {
             </p>
 
             <div className='action-buttons'>
-              <button className='btn-primary'>Contact Us</button>
-              <button className='btn-secondary'>Schedule IELTS/PTE</button>
-              <button className='btn-tertiary'>Free Mock Test</button>
+              <button className='btn-primary' onClick={() => navigate('/contact')}>Contact Us</button>
+              <button className='btn-secondary' onClick={() => setShowForm(true)}>Schedule IELTS/PTE</button>
+              <div className='notice'>Free Mock Test</div>
             </div>
 
             <div className='highlights'>
@@ -43,13 +70,50 @@ const PreparationClasses = () => {
               </p>
 
               <div className='action-buttons'>
-                <button className='btn-primary'>Contact Us</button>
-                <button className='btn-tertiary'>2-day Free Trial Class</button>
+                <button className='btn-primary' onClick={() => navigate('/contact')}>Contact Us</button>
+                <div className='notice'>2-day Free Trial Class</div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {showForm && (
+        <div className='modal-overlay' onClick={() => !submitting && setShowForm(false)}>
+          <div className='modal-card' onClick={(e) => e.stopPropagation()}>
+            <button className='modal-close' onClick={() => setShowForm(false)} aria-label='Close'>×</button>
+            <h3 className='modal-title'>IELTS Registration</h3>
+            <p className='modal-sub'>Fill your details and our team will assist your registration.</p>
+            <form className='modal-form' onSubmit={onSubmit}>
+              <div className='field'>
+                <label htmlFor='name'>Full name</label>
+                <input id='name' name='name' value={form.name} onChange={onChange} placeholder='Enter your full name' required />
+              </div>
+              <div className='field'>
+                <label htmlFor='phone'>Phone</label>
+                <input id='phone' name='phone' value={form.phone} onChange={onChange} placeholder='98XXXXXXXX' required />
+              </div>
+              <div className='field'>
+                <label htmlFor='email'>Email</label>
+                <input id='email' type='email' name='email' value={form.email} onChange={onChange} placeholder='you@example.com' required />
+              </div>
+              <button type='submit' className='submit-btn' disabled={submitting}>
+                {submitting ? "Submitting..." : "Submit"}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {showThanks && (
+        <div className='toast-overlay' onClick={() => setShowThanks(false)}>
+          <div className='toast-card'>
+            <div className='toast-icon'>✔</div>
+            <div className='toast-text'>Adhyaya team will reach out to you</div>
+            <button className='toast-close' onClick={() => setShowThanks(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </>
   )
 }

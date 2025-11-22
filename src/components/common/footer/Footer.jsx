@@ -39,7 +39,7 @@ const Footer = () => {
                 <a href='https://youtube.com/@adhyayaeducationalservices5577?si=96PIezr4HVwgJzTH' target='_blank' rel='noopener noreferrer' aria-label='YouTube'>
                   <i className='fab fa-youtube icon'></i>
                 </a>
-                <a href='https://youtube.com/@adhyayaeducationalservices5577?si=96PIezr4HVwgJzTH' target='_blank' rel='noopener noreferrer' aria-label='TikTok'>
+                <a href='https://www.tiktok.com/@adhyayaeducational?_r=1&_t=ZS-91VQr60x0Yj' target='_blank' rel='noopener noreferrer' aria-label='TikTok'>
                   <i className='fab fa-tiktok icon'></i>
                 </a>
               </div>

@@ -13,8 +13,9 @@
 /*--------head------------*/
 /*--------header------------*/
 header {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.06);
   margin: 0 30px;
+  backdrop-filter: saturate(140%) blur(2px);
 }
 .header-logo-bar {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0) 100%);
@@ -55,6 +56,7 @@ header ul li a {
   color: #fff;
   font-weight: 500;
   transition: 0.5s;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
 header ul li a:hover {
   color: #1eb2a6;
@@ -72,6 +74,7 @@ header ul li a:hover {
   align-items: center;
   gap: 6px;
   user-select: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
 .services-toggle:hover {
   color: #1eb2a6;
@@ -128,6 +131,28 @@ header ul li a:hover {
   display: none;
 }
 /*--------header------------*/
+
+/* Light theme for specific pages to ensure menu visibility */
+.header-light {
+  background-color: #fff !important;
+}
+.header-light ul li a {
+  color: #333 !important;
+}
+.header-light ul li a:hover {
+  color: #1eb2a6 !important;
+}
+.header-light .services-toggle {
+  color: #333 !important;
+}
+.header-light.header-logo-bar {
+  background: #fff;
+}
+.header-light .icon {
+  background-color: rgba(30, 178, 166, 0.1);
+  color: #1eb2a6;
+}
+
 @media screen and (max-width: 768px) {
   .start {
     clip-path: none;

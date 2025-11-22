@@ -6,6 +6,34 @@ import Hero from "./hero/Hero"
 import Hprice from "./Hprice"
 import Testimonal from "./testimonal/Testimonal"
 
+const DestinationImg = ({ label }) => {
+  const variants = (() => {
+    const base = [
+      `${label}`,
+      encodeURIComponent(label),
+      label.replace(/\s+/g, "-"),
+      label.replace(/\s+/g, "_"),
+      label.toLowerCase().replace(/\s+/g, "-"),
+      label.toLowerCase().replace(/\s+/g, "_")
+    ]
+    const exts = ["png", "jpg", "jpeg", "webp"]
+    const files = []
+    base.forEach((name) => exts.forEach((ext) => files.push(`/images/destinations/${name}.${ext}`)))
+    return Array.from(new Set(files))
+  })()
+  const [idx, setIdx] = React.useState(0)
+  const src = variants[idx]
+  return (
+    <img
+      src={src}
+      alt={label}
+      onError={() => {
+        if (idx < variants.length - 1) setIdx(idx + 1)
+      }}
+    />
+  )
+}
+
 const Home = () => {
   const [showForm, setShowForm] = useState(false)
   const [showThanks, setShowThanks] = useState(false)
@@ -86,6 +114,7 @@ const Home = () => {
 
       <AboutCard />
       <HAbout />
+
       <Testimonal />
       <Hblog />
       <Hprice />

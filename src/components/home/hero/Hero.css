@@ -208,3 +208,47 @@
   cursor: pointer;
   color: #16a89a;
 }
+
+/* Destinations */
+.destinations { padding: 40px 0; }
+.dest-head { text-align: center; margin-bottom: 18px; }
+.dest-head h2 { margin: 0; font-weight: 800; }
+.dest-head p { margin: 6px 0 0; color: #4a5568; }
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (min-width: 768px) {
+  .destinations-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+.dest-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.dest-card img { width: 60px; height: 60px; object-fit: contain; }
+.dest-label { font-weight: 700; color: #102a43; font-size: 14px; }
+
+/* College & University */
+.college-section { padding: 30px 0 10px; }
+.college-wrap { text-align: center; background: linear-gradient(135deg, #1eb2a6 0%, #16a89a 100%); color: #fff; border-radius: 14px; padding: 18px; box-shadow: 0 12px 28px rgba(0,0,0,0.12); }
+.college-wrap h2 { margin: 0 0 6px 0; font-weight: 800; }
+.college-wrap .college-sub { margin: 0; font-weight: 600; opacity: .95; }
+.college-countries-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin-top: 16px; }
+@media (min-width: 768px) { .college-countries-grid { grid-template-columns: repeat(5, minmax(0,1fr)); } }
+.country-card { background: #fff; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.country-card img { width: 60px; height: 60px; object-fit: contain; }
+
+/* Banner country strip */
+.banner-countries { padding: 12px 0; }
+.countries-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.country-pill { background: #fff; border-radius: 999px; padding: 6px 10px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+.country-pill img { width: 28px; height: 28px; object-fit: contain; }
+.pill-label { font-weight: 700; color: #102a43; font-size: 13px; }

@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import "./services.css"
 import Back from "../common/back/Back"
+import "../home/hero/Hero.css"
 
 const InternshipOpportunities = () => {
+  const [showNotice, setShowNotice] = useState(false)
   return (
     <>
       <Back title='Internship Opportunities' />
@@ -15,7 +17,12 @@ const InternshipOpportunities = () => {
             </p>
 
             <div className='action-buttons'>
-              <button className='btn-primary'>Apply Now</button>
+              <button
+                className='btn-primary'
+                onClick={() => setShowNotice(true)}
+              >
+                Apply Now
+              </button>
             </div>
 
             <div className='highlights'>
@@ -39,6 +46,17 @@ const InternshipOpportunities = () => {
           </div>
         </div>
       </section>
+
+      {showNotice && (
+        <div className='modal-overlay' onClick={() => setShowNotice(false)}>
+          <div className='modal-card' onClick={(e) => e.stopPropagation()}>
+            <button className='modal-close' onClick={() => setShowNotice(false)} aria-label='Close'>×</button>
+            <h3 className='modal-title'>Application Information</h3>
+            <p className='modal-sub'>Ready to take the next step in your career? Send your resume to adhyaya.jobs@gmail.com, and our team will be in touch with you soon!.</p>
+            <button className='submit-btn' onClick={() => setShowNotice(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </>
   )
 }

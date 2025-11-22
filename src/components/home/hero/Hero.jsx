@@ -10,15 +10,8 @@ const Hero = () => {
           <div className='row'>
             <Heading subtitle='WELCOME TO ADHYAYA' title='Educate. Empower. Inspire.' />
             
-            <p> We are here for you.</p>
-            <div className='button'>
-              <button className='primary-btn'>
-                GET STARTED NOW <i className='fa fa-long-arrow-alt-right'></i>
-              </button>
-              <button>
-                VIEW COURSE <i className='fa fa-long-arrow-alt-right'></i>
-              </button>
-            </div>
+            <p> Opening doors to global education, </p>
+            <p> one student at a time</p>
           </div>
         </div>
       </section>

@@ -1,8 +1,10 @@
 import React from "react"
 import "./services.css"
 import Back from "../common/back/Back"
+import { useNavigate } from "react-router-dom"
 
 const InterviewPreparation = () => {
+  const navigate = useNavigate()
   return (
     <>
       <Back title='Interview Preparation Sessions' />
@@ -33,7 +35,12 @@ const InterviewPreparation = () => {
             </div>
 
             <div className='action-buttons'>
-              <button className='btn-primary'>Book an Interview Prep Session</button>
+              <button
+                className='btn-primary'
+                onClick={() => navigate(`/contact?subject=${encodeURIComponent('Book an Interview Prep Session')}`)}
+              >
+                Book an Interview Prep Session
+              </button>
             </div>
 
             <div className='highlights'>

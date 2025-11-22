@@ -3,6 +3,34 @@ import OnlineCourses from "../allcourses/OnlineCourses"
 import Heading from "../common/heading/Heading"
 import "../allcourses/courses.css"
 
+// Helper image component that tries multiple filename variants and extensions
+const DestinationImg = ({ label, className }) => {
+  const variants = (() => {
+    const bases = [
+      label,
+      encodeURIComponent(label),
+      label.replace(/\s+/g, "-"),
+      label.replace(/\s+/g, "_"),
+      label.toLowerCase().replace(/\s+/g, "-"),
+      label.toLowerCase().replace(/\s+/g, "_")
+    ]
+    const exts = ["png", "jpg", "jpeg", "webp"]
+    const files = []
+    bases.forEach((b) => exts.forEach((e) => files.push(`/images/destinations/${b}.${e}`)))
+    return Array.from(new Set(files))
+  })()
+  const [idx, setIdx] = useState(0)
+  const src = variants[idx]
+  return (
+    <img
+      className={className}
+      src={src}
+      alt={label}
+      onError={() => idx < variants.length - 1 && setIdx(idx + 1)}
+    />
+  )
+}
+
 const destinations = [
   {
     title: "United States: The Land of Innovation and Diversity",
@@ -60,17 +88,16 @@ const destinations = [
   },
 ]
 
-const destinationImages = [
-  "./images/destinations/usa.jpg",
-  "./images/destinations/australia.jpg",
-  "./images/destinations/dubai.jpg",
-  "./images/destinations/india.jpg",
-  "./images/destinations/canada.jpg",
-  "./images/destinations/uk.jpg",
-  "./images/destinations/france.jpg",
-  "./images/destinations/cyprus.jpg",
-  "./images/destinations/europe.jpg",
-]
+// Map long titles to image labels that match provided filenames
+const imageLabelFromTitle = (title) => {
+  const head = title.split(":")[0].trim()
+  const map = {
+    "United States": "USA",
+    "United Kingdom": "UK",
+    "Other European Countries": "European Union",
+  }
+  return map[head] || head
+}
 
 const HAbout = () => {
   const [selected, setSelected] = useState(null)
@@ -79,7 +106,7 @@ const HAbout = () => {
     <>
       <section className='homeAbout'>
         <div className='container'>
-          <Heading subtitle='Destination' title='College & University' />
+          <Heading subtitle='Destination' title='Discover top colleges and universities from around the world – make your choice!' />
 
           <div className='coursesCard'>
             <div className='grid2'>
@@ -89,7 +116,7 @@ const HAbout = () => {
                     <h3 className='destination-title'>{val.title}</h3>
                   </div>
                   <div className='destination-img-wrap'>
-                    <img className='destination-img' src={destinationImages[idx]} alt={val.title} />
+                    <DestinationImg className='destination-img' label={imageLabelFromTitle(val.title)} />
                   </div>
                   <div className='text destination-text'>
                     <p className='destination-excerpt'>{val.desc.substring(0, 200)}...</p>

@@ -1,8 +1,10 @@
 import React from "react"
 import "./services.css"
 import Back from "../common/back/Back"
+import { useNavigate } from "react-router-dom"
 
 const RecreationalClasses = () => {
+  const navigate = useNavigate()
   return (
     <>
       <Back title='Recreational Classes' />
@@ -15,8 +17,16 @@ const RecreationalClasses = () => {
             </p>
 
             <div className='action-buttons'>
-              <button className='btn-primary'>Join Today</button>
-              <button className='btn-secondary'>Trial Class Available</button>
+              <button
+                className='btn-primary'
+                onClick={() => {
+                  const subject = encodeURIComponent("music class query")
+                  navigate(`/contact?subject=${subject}`)
+                }}
+              >
+                Join Today
+              </button>
+              <div className='notice'>Trial Class Available</div>
             </div>
 
             <div className='highlights'>

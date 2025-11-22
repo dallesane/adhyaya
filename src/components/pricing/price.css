@@ -1,3 +1,7 @@
+/* Heading size tweaks */
+.hprice #heading h1 { font-size: 28px; line-height: 1.25; }
+.hprice #heading h3 { font-size: 14px; }
+
 .price .items {
   padding: 40px 30px;
   text-align: center;
